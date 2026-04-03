@@ -10,11 +10,9 @@ const app = express();
 
 // ✅ Proper CORS setup (ENOUGH — no options needed)
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "*", // ✅ allow all (for now)
   methods: ["GET", "POST", "PATCH", "DELETE"],
-  credentials: true
 }));
-
 app.use(express.json());
 app.use("/api/leads", leadRoutes);
 
